@@ -1,0 +1,8 @@
+<div  [ngClass]="{'darkModeClass': darkMode}" fxLayout.lt-md="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+    <mat-card *ngFor="let day of forcastForInit; let i = index" 
+      [ngStyle]="{'background-color': darkMode ? 'grey' : 'white'}">
+      <mat-card-title>{{ this.forcastForInit[i].day }}</mat-card-title>
+          <img mat-card-md-image src="{{ iconURL + this.forcastForInit[i].icon + '.svg' }}">
+      <mat-card-footer>{{ this.forcastForInit[i].degree["Value"] | temperature}} &#176;C</mat-card-footer> 
+    </mat-card>
+</div>

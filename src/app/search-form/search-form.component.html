@@ -1,0 +1,13 @@
+<form [formGroup]="citiesFormGroup">
+    <mat-form-field class="searchFile">
+        <input matInput type="text" formControlName="cityInput" [matAutocomplete]="auto">
+        <mat-placeholder class="placeholder">Enter a City</mat-placeholder>
+        <mat-icon matSuffix>search</mat-icon>
+        <mat-hint>Enter a valid city.</mat-hint>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getCity($event.option.value)' [displayWith]="displayFunction">
+            <mat-option *ngFor="let city of citiesOptions" [value] = city>
+              {{ city["LocalizedName"] }}, {{city["Country"]["ID"]}}
+            </mat-option>
+          </mat-autocomplete>
+    </mat-form-field>
+</form>

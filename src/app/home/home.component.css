@@ -1,0 +1,12 @@
+forecast-item-container {
+    padding: 20px;
+}
+mat-card {
+    height: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.darkModeClass {
+    background-color: #2d2d2d;
+    color: whitesmoke;
+}

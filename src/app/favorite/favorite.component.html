@@ -1,0 +1,10 @@
+<main>
+    <h1 fxLayoutAlign= "center">Your Favorite List!</h1>
+    <div fxLayout.lt-md="column" fxLayoutAlign="space-around center" fxLayoutGap="20px" >
+        <mat-card *ngFor="let city of citiesFaveArray;">
+        <mat-card-title>{{ city.name }}</mat-card-title>
+            <img mat-card-md-image src="{{ iconURL + city['condition']['icon'] + '.svg' }}">
+        <mat-card-footer fxLayoutAlign="center">{{ city['condition']['degree'] | temperature}} &#176;C</mat-card-footer> 
+        </mat-card>
+    </div>
+</main>

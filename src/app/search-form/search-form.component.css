@@ -1,0 +1,9 @@
+.searchField {
+    margin: 2rem;
+}
+.placeholder {
+    color:gray; 
+}
+.mat-hint {
+    color: gray;
+}

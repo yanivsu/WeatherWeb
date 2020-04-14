@@ -1,0 +1,54 @@
+
+.mat-card {
+    background: white;
+    color: rgba(0,5,0,.87);
+}
+.weatherIcon{
+    height: 4rem;
+    width: 4rem;
+}
+.cityNameTitle {
+    font-size: 3.2rem;
+    font-weight: bold;
+}
+.cityDegree {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.city-current-weather {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.cityCard {
+    padding: 5rem;
+}
+.forcastHeader {
+    padding: 30px;
+}
+main {
+    background-color: white;
+}
+.favorite-button:hover {
+    color: tomato;
+}
+.darkModeClass {
+    background-color: #2d2d2d;
+    color: whitesmoke;
+}
+.darkModeClass.favorite-button:hover {
+    background-color: #2d2d2d;
+    color: whitesmoke;
+}
+.app-serach-form {
+    color: green;
+}
+
+.darkModeButton {
+    height: 2.5rem;
+    margin: 5px;
+    color: white;
+    background-color: #000000;
+}
+

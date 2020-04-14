@@ -1,0 +1,63 @@
+
+<main [className]="darkMode ? 'darkModeClass' : ''">
+    <section>
+        <app-search-form 
+            fxFlex
+            fxLayout 
+            fxLayoutAlign="center"
+            (cityEventEmitter)="changeCityNameOnly($event)"
+            
+        >
+        </app-search-form>
+        <button fxLayout="row" fxLayoutAlign="end start" class="darkModeButton" mat-raised-button (click)="changeTheme()">Dark Mode</button>
+    </section>
+    <section class="forcastHeader">
+        <mat-card [className]="darkMode ? 'darkModeClass' : ''">
+            <div class="cityCard" fxLayout fxLayout.lt-md="column" fxLayoutAlign="space-between center" fxLayoytGap="200px">
+                <div class="cityCardHeader" fxLayoutAlign="start">
+                    <div class="iconWeatherDiv">
+                        <img class="weatherIcon" src="{{ iconURL + city.condition.icon + '.svg' }}" alt="WeatherIcon">
+                    </div>
+                    <div class="cityNameTitle" >
+                        {{ city.name }}
+                        <div  *ngIf=" city.condition.currentWeather !== 'null'" class="cityDegree" fxLayoutAlign="end start">
+                            {{ city.condition.degree | temperature }} &#176;C
+                        </div>
+                    </div>
+                </div>
+                <div class="favoriteClass" fxLayoutAlign="end center"> 
+                    <div>
+                        <ng-lottie  
+                            [options]="options" 
+                            [styles]="styles"
+                            (animationCreated)="animationCreated($event)"
+                            (complete)="complete()"
+                        >
+                        </ng-lottie>
+                    </div>
+                    <button  
+                        mat-raised-button   
+                        [ngClass]="{
+                          'darkModeClass favorite-button': darkMode,
+                          'favorite-button': !darkMode
+                        }" 
+                      (click)="addCityFave(city)">
+                        <mat-icon>favorite</mat-icon>Add To Favorite
+                    </button>
+                </div>
+            </div>
+            <div class="city-current-weather" fxLayoutAlign="center" >
+                <div *ngIf=" city.condition.currentWeather !== 'null'">
+                    Now: {{ city.condition.currentWeather }}
+                </div>
+            </div>
+            <app-home [darkMode]="darkMode"></app-home>
+            </mat-card>
+    </section>      
+</main>
+
+
+
+
+
+
